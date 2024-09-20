@@ -1,4 +1,4 @@
-name: Android Build
+name: Android Build and Lint Check
 on:
   pull_request:
     branches: [ master ]
@@ -13,13 +13,16 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Setup Java JDK
-        uses: actions/setup-java@v1
+        uses: actions/setup-java@v2
         with:
           distribution: 'adopt'
           java-version: '11'
 
       - name: Grant execute permission for Gradlew
         run: chmod +x ./gradlew
+
+      - name: Run Android Lint
+        run: ./gradlew lint
 
       - name: Build with Gradle
         run: ./gradlew assembleDebug
