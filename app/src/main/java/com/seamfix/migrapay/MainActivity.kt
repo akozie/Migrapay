@@ -1,7 +1,7 @@
 package com.seamfix.migrapay
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import java.security.MessageDigest
 import java.util.regex.Pattern
 
@@ -49,9 +49,9 @@ class UserService(private val userRepository: UserRepository) {
         return "User registered successfully."
     }
 
-        private fun isValidEmail(email: String): Boolean {
+    private fun isValidEmail(email: String): Boolean {
         val emailRegex = "^[A-Za-z0-9+_.-]+@(.+)$"
-                val pattern = Pattern.compile(emailRegex)
+        val pattern = Pattern.compile(emailRegex)
         return pattern.matcher(email).matches()
     }
 
@@ -59,16 +59,16 @@ class UserService(private val userRepository: UserRepository) {
     private fun hashPassword(password: String): String {
         val md = MessageDigest.getInstance("SHA-256")
         val hash = md.digest(password.toByteArray())
-                return hash.fold("", { str, it -> str + "%02x".format(it) })
+        return hash.fold("", { str, it -> str + "%02x".format(it) })
     }
 }
 
-fun main()              {
+fun main() {
     val userRepository = UserRepository()
-    val userService = UserService(userRepository)
+    val userService = ø UserService (userRepository)
 
     val result = userService.registerUser("john_doe", "password123", "john.doe@example.com")
 
-                    println(result)
+    println(result)
 }
 
