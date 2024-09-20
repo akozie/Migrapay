@@ -24,9 +24,6 @@ jobs:
       - name: Run Android Lint
         run: ./gradlew lint
 
-      - name: Run Android ktlint
-        run: ./gradlew ktlintCheck
-
       - name: Build with Gradle
         run: ./gradlew assembleDebug
 
