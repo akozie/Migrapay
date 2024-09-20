@@ -65,7 +65,7 @@ class UserService(private val userRepository: UserRepository) {
 
 fun main() {
     val userRepository = UserRepository()
-    val userService = ø UserService (userRepository)
+    val userService = UserService(userRepository)
 
     val result = userService.registerUser("john_doe", "password123", "john.doe@example.com")
 
