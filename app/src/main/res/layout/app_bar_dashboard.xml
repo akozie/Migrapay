@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".activity.MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:background="@color/background_color"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/dashboard_activity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:titleTextColor="#FFFFFF"
+                android:minHeight="?actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                android:gravity="start">
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/dashboard_activity_toolbar_CL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/hi_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="Hi, "
+                        android:visibility="gone"
+                        android:textColor="@color/white"
+                        android:queryBackground="@android:color/transparent"
+                        android:textSize="18sp"
+                        app:layout_anchorGravity="center"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <TextView
+                        android:id="@+id/dashboard_activity_toolbar_fragment_name_text_view"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/primary"
+                        android:textSize="20sp"
+                        android:visibility="visible"
+                        app:layout_anchorGravity="center"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <include
+            android:id="@+id/content_dashboard"
+            layout="@layout/content_dashboard"
+            tools:viewBindingIgnore="true"/>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
+
